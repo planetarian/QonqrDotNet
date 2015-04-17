@@ -80,7 +80,7 @@ namespace Qonqr
         /// The returned Task's result will contain
         /// the requested Zone.
         /// </returns>
-        public async Task<Zone> GetZoneAsync(int zoneId)
+        public async Task<Zone> GetZoneAsync(uint zoneId)
         {
             string result;
             try
@@ -100,7 +100,7 @@ namespace Qonqr
         /// </summary>
         /// <param name="zoneId">Zone ID number.</param>
         /// <returns>The requested Zone.</returns>
-        public Zone GetZone(int zoneId)
+        public Zone GetZone(uint zoneId)
         {
             var task = GetZoneAsync(zoneId);
             task.Wait();
