@@ -8,7 +8,7 @@ namespace Qonqr
 {
     public class QonqrApi : IDisposable
     {
-        private const string _baseUrl = "http://api.qonqr.com/pub/zones/";
+        private const string _baseUrl = "http://testapi.qonqr.com/pub/zones/";
         private const int _expectedApiSecretLength = 32;
 
         private readonly string _apiKey;
