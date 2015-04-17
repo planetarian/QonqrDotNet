@@ -14,8 +14,8 @@ namespace Qonqr
         public double Latitude { get; set; }
         public double Longitude { get; set; }
         public ZoneControlState ControlState { get; set; }
-        public DateTime DateCapturedUtc { get; set; }
-        public DateTime LeaderSinceDateUtc { get; set; }
+        public DateTime? DateCapturedUtc { get; set; }
+        public DateTime? LeaderSinceDateUtc { get; set; }
         public uint LegionCount { get; set; }
         public uint SwarmCount { get; set; }
         public uint FacelessCount { get; set; }
