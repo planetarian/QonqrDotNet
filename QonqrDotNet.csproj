@@ -39,6 +39,7 @@
     <Reference Include="System.Net.Http" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Extensions.cs" />
     <Compile Include="QonqrApi.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UtmGridArea.cs" />

@@ -102,9 +102,7 @@ namespace Qonqr
         /// <returns>The requested Zone.</returns>
         public Zone GetZone(uint zoneId)
         {
-            var task = GetZoneAsync(zoneId);
-            task.Wait();
-            return task.Result;
+            return GetZoneAsync(zoneId).WaitGetResult();
         }
 
 
@@ -155,9 +153,7 @@ namespace Qonqr
             double topLat, double leftLon,
             double bottomLat, double rightLon)
         {
-            var task = GetZonesAsync(topLat,leftLon,bottomLat,rightLon);
-            task.Wait();
-            return task.Result;
+            return GetZonesAsync(topLat, leftLon, bottomLat, rightLon).WaitGetResult();
         }
 
 
@@ -198,9 +194,7 @@ namespace Qonqr
         /// <returns>The array of up to 500 most recently-updated zones within the given location and time frame.</returns>
         public ZoneCollection GetZones(string utmString, DateTime lastChangeDate)
         {
-            var task = GetZonesAsync(utmString, lastChangeDate);
-            task.Wait();
-            return task.Result;
+            return GetZonesAsync(utmString, lastChangeDate).WaitGetResult();
         }
 
         #endregion zones
@@ -246,9 +240,7 @@ namespace Qonqr
         /// <returns>The provided coordinate location's UTM grid reference descriptor.</returns>
         public UtmGridLocation GetUtmGridReference(double latitude, double longitude)
         {
-            var task = GetUtmGridReferenceAsync(latitude, longitude);
-            task.Wait();
-            return task.Result;
+            return GetUtmGridReferenceAsync(latitude, longitude).WaitGetResult();
         }
 
 
@@ -291,9 +283,7 @@ namespace Qonqr
         /// <returns>The array of UtmGridArea objects contained within the provided top-level grid.</returns>
         public UtmGridArea[] GetUtmGridBreakdown(string topLevel)
         {
-            var task = GetUtmGridBreakdownAsync(topLevel);
-            task.Wait();
-            return task.Result;
+            return GetUtmGridBreakdownAsync(topLevel).WaitGetResult();
         }
 
         #endregion utm grid
