@@ -7,22 +7,19 @@ namespace Qonqr
     [JsonObject]
     public class ZoneCollection : IEnumerable<Zone>, IEnumerator<Zone>
     {
+        private int _position = -1;
+
         public uint Count { get; set; }
         public Zone[] Zones { get; set; }
 
-
-        private int _position = -1;
+        public Zone Current => Zones[_position];
+        object IEnumerator.Current => Current;
 
         [System.Runtime.CompilerServices.IndexerName("Zone")]
         public Zone this[int index]
         {
             get { return Zones[index]; }
             set { Zones[index] = value; }
-        }
-
-        public Zone Current
-        {
-            get { return Zones[_position]; }
         }
 
         public IEnumerator<Zone> GetEnumerator()
@@ -33,11 +30,6 @@ namespace Qonqr
         IEnumerator IEnumerable.GetEnumerator()
         {
             return GetEnumerator();
-        }
-
-        public void Dispose()
-        {
-            Reset();
         }
 
         public bool MoveNext()
@@ -51,9 +43,9 @@ namespace Qonqr
             _position = 0;
         }
 
-        object IEnumerator.Current
+        public void Dispose()
         {
-            get { return Current; }
+            Reset();
         }
     }
 }
